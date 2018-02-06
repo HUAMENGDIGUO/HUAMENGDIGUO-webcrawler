@@ -16,6 +16,49 @@ class Music {
     }
 }
 
+var is_space = function(s) {
+    if (s.length == 0) {
+        return false
+    }
+    for (var i = 0; i < s.length; i++) {
+        if (s[i] != ' ') {
+            return false
+            break
+        }
+    }
+    return true
+}
+
+var strip_left = function(s) {
+    if (is_space(s) == true) {
+        return ''
+    }
+    for (var i = 0; i < s.length; i++) {
+        if (s[i] != ' ') {
+            result = i
+            break
+        }
+    }
+    return s.slice(result, s.length)
+}
+
+var strip_right = function(s) {
+    if (is_space(s) == true) {
+        return ''
+    }
+    for (var i = s.length - 1; i >= 0; i--) {
+        if (s[i] != ' ') {
+            result = i + 1
+            break
+        }
+    }
+    return s.slice(0, result)
+}
+
+var strip = function(s) {
+    return strip_right(strip_left(s))
+}
+
 var log = console.log.bind(console)
 
 var musicFromDiv = (div) => {
@@ -33,7 +76,7 @@ var musicFromDiv = (div) => {
 
     var yearAndType = e('div > p')
     var y = yearAndType.text().split('/')[1]
-    music.year = String(y).split('-')[0]
+    music.year = strip(String(y).split('-')[0])
     music.type = yearAndType.text().split('/')[4]
 
     var comment = e('.star > .pl')
