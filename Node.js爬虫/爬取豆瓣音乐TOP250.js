@@ -4,7 +4,7 @@ var cheerio = require('cheerio')
 
 class Music {
     constructor() {
-        // 分别是歌曲名/歌手名/评分/年份/类型/评论人数/封面图片链接
+        // 分别是歌曲名/歌手名/评分/封面图片链接/年份/类型/评论人数
         this.songName = ''
         this.singerName = ''
         this.score = 0
@@ -12,7 +12,6 @@ class Music {
         this.year = 0
         this.type = ''
         this.comments = ''
-
     }
 }
 
@@ -139,7 +138,6 @@ var downloadCovers = (music) => {
         var path = 'covers/' + m.songName + '.jpg'
         // 下载图片
         request(url).pipe(fs.createWriteStream(path))
-        log('url', url)
     }
 }
 
