@@ -12,4 +12,4 @@
 ![image text](https://cdn.rawgit.com/HUAMENGDIGUO/HUAMENGDIGUO-webcrawler/d6d12095/sample/date2.png)
 ![image text](https://cdn.rawgit.com/HUAMENGDIGUO/HUAMENGDIGUO-webcrawler/d6d12095/sample/date3.png)
 
-# 以上两种情形都需要自行补充填写数据之后才可进行数据可视化处理
+# 以上两种情形都需要自行补充填写及修改数据之后才可进行数据可视化处理
